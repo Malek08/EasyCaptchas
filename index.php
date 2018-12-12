@@ -23,7 +23,7 @@ header( 'content-type: text/html; charset=utf-8' );
 					<img src='script-captchas.php' alt='captcha'>
 					<br>
 					<form method="post" action="index.php">
-						<input type="text" name='captcha'>
+						<input type="text" name="captcha">
 						<input type="submit" name ="captcha" value ="VALIDER">
 					</form>
 				</div>

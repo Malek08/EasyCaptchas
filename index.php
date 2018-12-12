@@ -24,7 +24,7 @@ header( 'content-type: text/html; charset=utf-8' );
 					<br>
 					<form method="post" action="index.php">
 						<input type="text" name="captcha">
-						<input type="submit" name ="captcha" value ="VALIDER">
+						<input type="submit" name ="envoi" value ="VALIDER">
 					</form>
 				</div>
 			</body>

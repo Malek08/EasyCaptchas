@@ -1,12 +1,12 @@
 <?php
-
-
-/* SCRIPT FRONTAL AFFICHAGE DE CAPTCHA
-* AFFICHER UNE IMAGE GÉNÉRÉE EN PHP */
-SESSION_START ()
-$_SESSION[‘code’]
-  
-echo "<img src='script-captchas.php' alt='captchas' />";
+session_start();
+if(isset($_POST['captcha'])){
+    if($_POST['captcha']==$_SESSION['code']){
+        echo "Code correct";
+    } else {
+        echo "Code incorrect";
+    }
+}
 
 ?>
 
@@ -17,11 +17,11 @@ echo "<img src='script-captchas.php' alt='captchas' />";
 			<body>
 				Veuillez saisir le code de sécurité !
 				<br>
-				<img src='script-captchas.php' alt='captchas'>
+				<img src='script-captchas.php' alt='captcha'>
 				<br>
-				<form method="post" action="">
-					<input type="text" name='xcode'>
-					<input type="submit" name ="vcode" value ="VALIDER">
+				<form method="post" action="index.php">
+					<input type="text" name='captcha'>
+					<input type="submit" name ="code" value ="VALIDER">
 				</form>
 			</body>
 </html>

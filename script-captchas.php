@@ -1,6 +1,5 @@
 <?php
 session_start();
-$_SESSION['code'];
 
 header( 'content-type: text/html; charset=utf-8' );
 /****************************************************************
@@ -73,5 +72,5 @@ imagepng($image);
 
 /* DESTRUCTION DE L'IMAGE LIBÉRATION DE MÉMOIRE */
 imagedestroy($image);
-
+$_SESSION['code'];
 ?>

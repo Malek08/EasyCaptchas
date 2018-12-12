@@ -8,7 +8,7 @@ if(isset($_POST['captcha'])){
         echo "Code incorrect";
     }
 }
-
+header( 'content-type: text/html; charset=utf-8' );
 ?>
 
 <html>

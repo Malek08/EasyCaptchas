@@ -1,22 +1,24 @@
 <?php
 session_start();
 
+
 header( 'content-type: text/html; charset=utf-8' );
+
 /****************************************************************
 * CAPTCHA GENERATEUR IMAGE EN PHP
-* /!\ PAS DE RETOUR D'ERREUR SUR LA GÃ‰NÃ‰RATION
-* SCRIPT ALLEGÃ‰ SANS OPTIMISATION POUR LA COMPRÃ‰HENSION
+* /!\ PAS DE RETOUR D'ERREUR SUR LA GÉNÉRATION
+* SCRIPT ALLEGÉ SANS OPTIMISATION POUR LA COMPRÉHENSION
 *****************************************************************/
 
 /****************************************************************
 * 1. PARAMETRAGE DES ATTRIBUTS VARIABLES
 *****************************************************************/
-/* CHAINE DE CARACTÃˆRE PARAMÃˆTRABLE
-* SUPPRESSION DE 1 & I POUR Ã‰VITER LA CONFUSION DE LECTURE */
+/* CHAINE DE CARACTÈRE PARAMÈTRABLE
+* SUPPRESSION DE 1 & I POUR ÉVITER LA CONFUSION DE LECTURE */
 $chaine = '23456789ABCDEFGHJKLMNPQRSTUVWXYZ';
 
 /* CREATION de l'image par defaut en background */
-$image = imagecreatefrompng('Images/captcha_1.png');
+$image = imagecreatefrompng('Images/malek.png');
 
 /* COULEUR DES CARACTERES */
 $color = imagecolorallocate($image, 140, 0, 140);
@@ -37,7 +39,6 @@ function getCode($length, $chars) {
 		}
 	return $code;
 	};
-
 /****************************************************************
 * 3. PROCEDURES DE GENERATION DYNAMIQUE DE L'IMAGE
 *****************************************************************/
@@ -67,10 +68,11 @@ imagettftext($image, 28, -15, 120, 37, $color, $font, $char5);
 /* ENTETE HTTP A RENVOYER POUR LA GENERATION DE L'iMAGE */
 header('Content-Type: image/png');
 
-/* ENVOI DE L'IMAGE PNG GENERÃ‰E AU NAVIGATEUR */
+/* ENVOI DE L'IMAGE PNG GENERÉE AU NAVIGATEUR */
 imagepng($image);
 
-/* DESTRUCTION DE L'IMAGE LIBÃ‰RATION DE MÃ‰MOIRE */
+/* DESTRUCTION DE L'IMAGE LIBÉRATION DE MÉMOIRE */
 imagedestroy($image);
-$_SESSION['code'];
+
+$_SESSION['code']=$code;
 ?>

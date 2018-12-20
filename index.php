@@ -1,15 +1,21 @@
 <?php
 session_start();
-if(isset($_POST['captcha'])){
-    if($_POST['captcha']==$_SESSION['code']){
-        echo "Code correct";
-    }
-	if($_POST['captcha']!=$_SESSION['code']){
-        echo "Code incorrect";
-    }
-}
-header( 'content-type: text/html; charset=utf-8' );
+				if(isset($_POST['captcha'])){
+				if($_POST['captcha']==$_SESSION['code']){
+				echo "Code correct";
+				}
+				if($_POST['captcha']!=$_SESSION['code']&&(!empty($_POST['captcha']))){
+				echo "Code incorrect";
+				}
+				if (empty($_POST['captcha'])) {
+				{
+				echo "Champ vide";
+				}
+				}
+				header( 'content-type: text/html; charset=utf-8' );
+				}
 ?>
+
 
 <html>
 	<head>
@@ -27,6 +33,7 @@ header( 'content-type: text/html; charset=utf-8' );
 						<input type="submit" name ="envoi" value ="VALIDER">
 					</form>
 				</div>
+				
 			</body>
 			
 			<div class="night">

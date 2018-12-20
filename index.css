@@ -1,21 +1,26 @@
 body
 {
 	background: radial-gradient(ellipse at bottom, #000223 0%, #000000 100%);
-	color:white;
+	
 	display:inline-block;
 	overflow:hidden;
+	position:fixed;
+  background-attachment: fixed;
 }
 
 .text
 {
 	font-size:50px;
+	color:white;
 }
 
-.fixed {
-  position:fixed;
-  background-attachment: fixed;
+.red {
+	color:red;
 }
 
+.green{
+	color:green;
+}
 .night {
   position: relative;
   width: 100%;
